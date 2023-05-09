@@ -27,6 +27,7 @@ export default function MainBody() {
         </div></div> : <><Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/login" element={<Login />} />
+          <Route path = "/register" element = {<><Login /></>} />
         </Routes> </>
       }
     </>
