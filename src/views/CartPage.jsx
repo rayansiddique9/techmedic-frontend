@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import img1 from '../assets/images/download.jpg';
 import { context } from '../context/Context';
+import { useNavigate } from 'react-router-dom';
 
 export default function CartPage() {
 
-  const [,,,,,, cartItems, setCartItems] = useContext(context);
+  const navigate = useNavigate();
+  const [,,,,,, cartItems, setCartItems,, setSubtotal] = useContext(context);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -118,7 +120,7 @@ export default function CartPage() {
 
             <p className='text-lg'> Shipping cost will be added at checkout</p>
 
-            <button className='mt-4 btn-primary w-full bg-[#13a388] py-2 rounded-lg hover:bg-[#13a388dd] transition-all my-1 text-2xl text-[#ededed] disabled:bg-gray-500' disabled = {!cartItems.productArr.length}>Checkout</button>
+            <button onClick={() => { setSubtotal(total); navigate('/checkout') } } className='mt-4 btn-primary w-full bg-[#13a388] py-2 rounded-lg hover:bg-[#13a388dd] transition-all my-1 text-2xl text-[#ededed] disabled:bg-gray-500' disabled = {!cartItems.productArr.length}>Checkout</button>
 
           </div>
           

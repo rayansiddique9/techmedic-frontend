@@ -6,6 +6,7 @@ import Products from './ProductsPage'
 import Cart from './CartPage'
 import Orders from './OrdersPage'
 import CustomerService from './CustomerService'
+import Checkout from './CheckoutPage'
 import { context } from '../context/Context'
 import LandingPage from '../landing/LandingPage'
 
@@ -14,19 +15,20 @@ export default function MainBody() {
 
   return (
     <>
-        {authtoken.length ? <div className = 'font-[ropasans]'><NavBar/>
-          <div className='content'>  
-              <Routes>
-                <Route path ="/products" element = {<Products />}></Route>
-                <Route path ="/customerService" element = {<CustomerService/>}></Route>
-                <Route path ="/orders" element = {<Orders/>}></Route>
-                <Route path ="/cart" element = {<Cart/>}></Route>
-              </Routes>
-          </div></div> : <><Routes>
-                <Route path ="/" element = {<LandingPage/>}></Route>
-                <Route path = "/login" element = {<Login />} />
-            </Routes> </>
-        }   
+      {authtoken.length ? <div className='font-[ropasans]'>
+        <div className='content'>
+          <Routes>
+            <Route path="/products" element={<><NavBar /><Products /></>}></Route>
+            <Route path="/customerService" element={<><NavBar /><CustomerService /></>}></Route>
+            <Route path="/orders" element={<><NavBar /><Orders /></>}></Route>
+            <Route path="/cart" element={<><NavBar /><Cart /></>}></Route>
+            <Route path="/checkout" element={<><Checkout /></>}></Route>
+          </Routes>
+        </div></div> : <><Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/login" element={<Login />} />
+        </Routes> </>
+      }
     </>
   )
 }

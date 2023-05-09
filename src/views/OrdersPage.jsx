@@ -34,7 +34,7 @@ export default function OrdersPage() {
       <div className="container lg:w-2/3 xl:w-2/3 mx-auto">
         <h1 className="text-3xl font-semibold mb-6">Orders</h1>
 
-        {orders.length ? orders.map(r => <div className="bg-[#ededed29] p-4 rounded-lg shadow">
+        {orders.length ? orders.map(r => <div className="bg-[#ededed29] p-4 rounded-lg shadow mb-5">
           <ProductTableData order = {r}/>
         </div>) : error}
 
