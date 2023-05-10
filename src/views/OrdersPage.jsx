@@ -1,12 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react'
 import ProductTableData from './Components/ProductTableData'
 import { context } from '../context/Context';
+import Loader from '../components/Loader';
 
 export default function OrdersPage() {
   
   const [orders, setOrders] = useState([]);
   const [error, setError] = useState('');
   const [authtoken] = useContext(context);
+  const [rendered, setRendered] = useState(false);
   useEffect(()=>
   {
     const getResponse = async () => {
@@ -25,21 +27,26 @@ export default function OrdersPage() {
       });
       response = await response.json(); // parses JSON response into native JavaScript objects
       response.error ? setError(response.error) : setOrders(response.orders);
+      setRendered(true);
     }
-
+    
     getResponse();
   }, [authtoken])
+
   return (
     <main className="p-5">
-      <div className="container lg:w-2/3 xl:w-2/3 mx-auto">
+      {
+        rendered ? 
+        <div className="container lg:w-2/3 xl:w-2/3 mx-auto min-h-screen">
         <h1 className="text-3xl font-semibold mb-6">Orders</h1>
 
         {orders.length ? orders.map(r => <div className="bg-[#ededed29] p-4 rounded-lg shadow mb-5">
           <ProductTableData order = {r}/>
-        </div>) : error}
+        </div>) : <p className='text-[#edededaa] text-center flex flex-col justify-center'>{error}</p>}
 
         <br className=''></br>
-      </div>
+      </div> : <Loader />
+      }
     </main>
   )
 }

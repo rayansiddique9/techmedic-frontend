@@ -9,6 +9,8 @@ import CustomerService from './CustomerService'
 import Checkout from './CheckoutPage'
 import { context } from '../context/Context'
 import LandingPage from '../landing/LandingPage'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function MainBody() {
   const [authtoken] = useContext(context);
@@ -17,6 +19,18 @@ export default function MainBody() {
     <>
       {authtoken.length ? <div className='font-[ropasans]'>
         <div className='content'>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
           <Routes>
             <Route path="/products" element={<><NavBar /><Products /></>}></Route>
             <Route path="/customerService" element={<><NavBar /><CustomerService /></>}></Route>
