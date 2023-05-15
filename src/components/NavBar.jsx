@@ -21,12 +21,12 @@ export default function NavBar(){
         
     return <header className="flex justify-between text-white  bg-[#ededed15] px-3">
             <div>
-                <NavLink to="/products" className="text-white block py-navbar-item">
+                <NavLink to="/products" className="text-white py-navbar-item block">
                 <p className = "text-2xl"><span>TECH</span><span className = "text-[#13a388]">MEDIC</span></p>
                 </NavLink>
             </div>
 
-            <div className={`whitespace-nowrap block overflow-hidden md:hidden fixed z-20 top-0 left-0 bottom-0 h-full ${navWidth} bg-[#3f3a3a] transition-all shadow-2xl`}>
+            <div className={`whitespace-nowrap block overflow-hidden lg:hidden fixed z-20 top-0 left-0 bottom-0 h-full ${navWidth} bg-[#3f3a3a] transition-all shadow-2xl`}>
             <p className = "text-2xl w-fit px-4 my-5"><span>TECH</span><span className = "text-[#13a388]">MEDIC</span></p>
                 <ul className="">
                     
@@ -79,7 +79,7 @@ export default function NavBar(){
                 </ul>
             </div>
 
-            <nav className="hidden md:block text-lg">
+            <nav className="hidden lg:block text-lg">
                 <ul className="grid grid-flow-col items-center">
                     
                     <li><NavLink to= "/products" className="block px-navbar-item py-navbar-item  hover:bg-slate-600 transition-colors">
@@ -127,7 +127,7 @@ export default function NavBar(){
 
             </nav>
 
-            <button onClick= {hamClick} className="block md:hidden">
+            <button onClick= {hamClick} className="block lg:hidden">
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />

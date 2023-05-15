@@ -95,7 +95,7 @@ export default function ProductsPage() {
         <Searchbar />
         <div className={`${!error ? 'grid' : 'block'}  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-10 p-5`}>
           {error ? <p className='w-fit mx-auto'>{error}</p> : products.map(r => <div key = {r._id} className="product bg-[#ededed15] overflow-hidden rounded-md shadow border-2 border-[#13a388] transition-colors">
-            <img alt = "product" className='rounded-t-md transition hover:scale-105 aspect-square' src={r.picture ? r.picture : img1}></img>
+            <Link to = {`${r._id}`}><img alt = "product" className='rounded-t-md transition hover:scale-105 aspect-square' src={r.picture ? r.picture : img1}></img></Link>
             <div className="p-3 text-[#ededed] bg-[#ededed15] rounded-b-md">
               <p className='text-2xl text-[#13a388] font-semibold mt-1s w-fit float-right'>Rs. {r.price.toLocaleString()}</p>
               <h3>

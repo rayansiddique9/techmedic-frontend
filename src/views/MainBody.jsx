@@ -11,6 +11,7 @@ import { context } from '../context/Context'
 import LandingPage from '../landing/LandingPage'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import Product from './Product'
 
 export default function MainBody() {
   const [authtoken] = useContext(context);
@@ -37,6 +38,7 @@ export default function MainBody() {
             <Route path="/orders" element={<><NavBar /><Orders /></>}></Route>
             <Route path="/cart" element={<><NavBar /><Cart /></>}></Route>
             <Route path="/checkout" element={<><Checkout /></>}></Route>
+            <Route path="/products/:productId" element={<><NavBar /><Product /></>}></Route>
           </Routes>
         </div></div> : <><Routes>
           <Route path="/" element={<LandingPage />}></Route>

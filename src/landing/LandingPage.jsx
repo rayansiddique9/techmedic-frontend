@@ -96,7 +96,7 @@ export default function LandingPage() {
                 )}
 
               </div>
-              <h1 className='mx-auto mt-5 xl:mt-10 pb-16 w-fit text-sm md:text-2xl xl:text-3xl xl:[50%]'>GET ALL YOUR DEVICES IN TIP-TOP. <span className='underline'> ORDER A REPAIR!</span></h1>
+              <h1 className='mx-auto mt-10 xl:mt-10 pb-16 w-fit text-sm md:text-2xl xl:text-3xl xl:[50%]'>GET ALL YOUR DEVICES IN TIP-TOP. <span className='underline'> ORDER A REPAIR!</span></h1>
             </div>
         </div>
         <div className='font-[ropasans] md:text-lg flex justify-end bg-[#13a388] text-[#ededed] py-1 md:py-2 px-3'>

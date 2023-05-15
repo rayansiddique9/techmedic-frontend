@@ -49,7 +49,17 @@ code {
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 2px;
+  background-color: #13a388;
+}
+
+::-webkit-scrollbar-track {
+  background: #ededed99;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #13a388;
 }
 
 input::-webkit-outer-spin-button,
