@@ -88,3 +88,8 @@ input[type=number] {
     rotate: 350deg;
   }
 }
+
+.map-container {
+  height: 100%;
+  width: 100%;
+}

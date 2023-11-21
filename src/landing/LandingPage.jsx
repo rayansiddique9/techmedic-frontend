@@ -28,7 +28,7 @@ export default function LandingPage() {
       });
 
       response = await response.json();
-      response.error ? document.title = response.error : setProducts(response.products);
+      response.error ? console.log(response.error) : setProducts(response.products);
 
       response = await fetch('http://localhost:5000/api/reviews/getFeatured', {
         method: "GET", // *GET, POST, PUT, DELETE, etc.

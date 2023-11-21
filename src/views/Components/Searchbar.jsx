@@ -12,7 +12,7 @@ export default function Searchbar() {
 
   return (
     <div className = "w-fit mx-auto pt-6 pb-4">
-      <input value = {param} onChange = {e => changeParam(e)} placeholder = "Search" type = "text" className='bg-[#ededed2f] px-3 py-2 rounded-md w-[90vw] md:w-[50vw] xl:w-[30vw] text-[#edededee] focus:outline-0'/>
+      <input value = {param} onChange = {e => changeParam(e)} placeholder = "Search Products" type = "text" className='bg-[#ededed2f] px-3 py-2 rounded-md w-[90vw] md:w-[50vw] xl:w-[30vw] text-[#edededee] focus:outline-0'/>
     </div>
   )
 }

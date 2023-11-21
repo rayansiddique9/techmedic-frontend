@@ -92,6 +92,9 @@ export default function ProductsPage() {
     <div className="min-h-screen">
       {rendered ? 
         <>
+        <Link to="/repair-order">
+          <button className='float-right bg-[#13A388] hover:bg-[#13A388AA] text-[#ededed] rounded-md px-7 py-2 ml-auto mr-5 block my-5 text-xl transition-all'> Order a repair</button>
+        </Link>
         <Searchbar />
         <div className={`${!error ? 'grid' : 'block'}  grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 xl:gap-10 p-5`}>
           {error ? <p className='w-fit mx-auto'>{error}</p> : products.map(r => <div key = {r._id} className="product bg-[#ededed15] overflow-hidden rounded-md shadow border-2 border-[#13a388] transition-colors">
